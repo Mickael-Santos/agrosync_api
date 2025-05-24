@@ -10,6 +10,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Column;
 import lombok.Data;
+import jakarta.persistence.OneToMany;
+import java.util.List;
+import com.mickaelsantos.api_agrosync.modules.plantingstage.models.PlantingStage;
 
 @Data
 @Entity(name = "phenological_stages")
@@ -18,7 +21,7 @@ public class PhenologicalStage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private short order;
+    private short stageOrder;
     private Long degreeDay;
     private int cyclePercent;
     @ManyToOne()
@@ -26,4 +29,6 @@ public class PhenologicalStage {
     private MaturationGroup maturationGroup;
     @Column(name = "maturation_group_id")
     private Long maturation_group_id;
+    @OneToMany(mappedBy = "phenologicalStage_id")
+    private List<PlantingStage> plantingStages;
 }

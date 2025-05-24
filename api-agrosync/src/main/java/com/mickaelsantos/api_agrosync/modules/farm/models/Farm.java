@@ -16,6 +16,9 @@ import jakarta.persistence.Id;
 import lombok.Data; 
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity(name = "farms")
 public class Farm {
     @Id
