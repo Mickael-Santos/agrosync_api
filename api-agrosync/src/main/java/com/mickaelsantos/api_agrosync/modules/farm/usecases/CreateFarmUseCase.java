@@ -5,6 +5,8 @@ import com.mickaelsantos.api_agrosync.modules.farm.repositories.FarmRepository;
 import com.mickaelsantos.api_agrosync.modules.farm.dtos.CreateFarmResponseDto;
 import com.mickaelsantos.api_agrosync.modules.farm.models.Farm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.mickaelsantos.api_agrosync.exceptions.UserFoundException;
 
 @Service
 public class CreateFarmUseCase {
