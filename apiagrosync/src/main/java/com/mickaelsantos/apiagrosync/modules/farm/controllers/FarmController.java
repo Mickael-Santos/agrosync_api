@@ -30,7 +30,7 @@ public class FarmController {
         try {
             CreateFarmResponseDto response = createFarmUseCase.execute(requestDTO);
             return ResponseEntity.ok().body(response);
-        } catch (UserFoundException e) {
+        } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
@@ -40,7 +40,7 @@ public class FarmController {
         try {
             UpdateFarmResponseDto response = updateFarmUseCase.execute(requestDTO);
             return ResponseEntity.ok().body(response);
-        } catch (FarmNotFoundException e) {
+        } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }

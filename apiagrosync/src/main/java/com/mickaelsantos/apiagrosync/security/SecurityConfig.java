@@ -26,8 +26,9 @@ public class SecurityConfig
         .cors(cors -> cors.configurationSource(corsConfigurationSource()))
         .authorizeHttpRequests(auth -> {
             auth.requestMatchers("/api/v1/farm/create").permitAll()
-            .requestMatchers("/api/v1/farm/update").permitAll();
-            
+            .requestMatchers("/api/v1/farm/update").permitAll()
+            .requestMatchers("/api/v1/field/create").permitAll();
+
             auth.anyRequest().authenticated();
         });
         return http.build();
