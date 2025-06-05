@@ -1,6 +1,5 @@
 package com.mickaelsantos.apiagrosync.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -8,7 +7,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
@@ -27,7 +25,16 @@ public class SecurityConfig
         .authorizeHttpRequests(auth -> {
             auth.requestMatchers("/api/v1/farm/create").permitAll()
             .requestMatchers("/api/v1/farm/update").permitAll()
-            .requestMatchers("/api/v1/field/create").permitAll();
+            .requestMatchers("/api/v1/farm/toggle/{id}").permitAll()
+            .requestMatchers("/api/v1/field/create").permitAll()
+            .requestMatchers("/api/v1/user/create").permitAll()
+            .requestMatchers("/api/v1/user/delete/{id}").permitAll()
+            .requestMatchers("/api/v1/admin/create").permitAll()
+            .requestMatchers("/api/v1/admin/update").permitAll()
+            .requestMatchers("/api/v1/admin/delete/{id}").permitAll()
+            .requestMatchers("/api/v1/user/update").permitAll()
+            .requestMatchers("/api/v1/user/auth").permitAll()
+            .requestMatchers("/api/v1/admin/auth").permitAll();
 
             auth.anyRequest().authenticated();
         });

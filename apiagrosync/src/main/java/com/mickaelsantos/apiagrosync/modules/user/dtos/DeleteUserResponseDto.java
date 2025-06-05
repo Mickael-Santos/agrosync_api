@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateUserRequestDto {
-    private String username;
-    private String email;
-    private String password;
-    private Long farmId;
+public class DeleteUserResponseDto {
+    private String message;
+    private boolean isDeleted;
 }

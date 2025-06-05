@@ -6,12 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class CreateUserRequestDto {
-    private String username;
-    private String email;
-    private String password;
-    private Long farmId;
+public class AuthUserResponseDto {
+    private String acessToken;
+    private Long expiresIn;
 }

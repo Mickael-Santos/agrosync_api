@@ -6,10 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class UpdateFarmResponseDto {
+public class ToggleFarmResponseDto {
     private Long id;
     private String name;
     private String identification;

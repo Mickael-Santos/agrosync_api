@@ -1,4 +1,4 @@
-package com.mickaelsantos.apiagrosync.modules.user.dtos;
+package com.mickaelsantos.apiagrosync.modules.admin.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,12 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class CreateUserRequestDto {
+public class AuthAdminRequestDto {
     private String username;
-    private String email;
     private String password;
-    private Long farmId;
 }

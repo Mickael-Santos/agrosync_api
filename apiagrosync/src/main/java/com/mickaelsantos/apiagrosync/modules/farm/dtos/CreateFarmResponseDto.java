@@ -14,4 +14,5 @@ public class CreateFarmResponseDto {
     private String name;
     private String identification;
     private String stateRegistration;
+    private boolean active;
 }

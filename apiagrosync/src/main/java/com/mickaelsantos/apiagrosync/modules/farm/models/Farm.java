@@ -30,6 +30,7 @@ public class Farm {
     private String name;
     private String identification;
     private String stateRegistration;
+    private boolean active;
     @OneToMany(mappedBy = "farm_id")
     private List<User> users;
     @OneToMany(mappedBy = "farm_id")
