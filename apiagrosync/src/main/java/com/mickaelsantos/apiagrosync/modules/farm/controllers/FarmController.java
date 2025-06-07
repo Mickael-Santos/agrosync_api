@@ -2,6 +2,7 @@ package com.mickaelsantos.apiagrosync.modules.farm.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +33,7 @@ public class FarmController {
     @Autowired
     private ToggleFarmUseCase toggleFarmUseCase;
 
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<Object> create(@RequestBody CreateFarmRequestDto requestDTO) {
         try {
@@ -42,6 +44,7 @@ public class FarmController {
         }
     }
 
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<Object> update(@RequestBody UpdateFarmRequestDto requestDTO) {
         try {
@@ -52,6 +55,7 @@ public class FarmController {
         }
     }
 
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     @PatchMapping("/toggle/{id}")
     public ResponseEntity<Object> toggle(@PathVariable Long id) {
         try {

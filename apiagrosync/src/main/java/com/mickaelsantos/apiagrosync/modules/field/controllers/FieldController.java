@@ -2,6 +2,7 @@ package com.mickaelsantos.apiagrosync.modules.field.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ public class FieldController {
     @Autowired
     private CreateFieldUseCase createFieldUseCase;
 
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<Object> create(@RequestBody CreateFieldRequestDto requestDTO) {
         try {
