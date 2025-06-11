@@ -1,9 +1,8 @@
 package com.mickaelsantos.apiagrosync.modules.planting.models;
 
-import com.mickaelsantos.apiagrosync.modules.field.models.Field;
-import com.mickaelsantos.apiagrosync.modules.seed.models.Seed;
-import com.mickaelsantos.apiagrosync.modules.harvest.models.Harvest;
-import com.mickaelsantos.apiagrosync.modules.plantingstage.models.PlantingStage;
+import com.mickaelsantos.apiagrosync.modules.cropcycle.models.Harvest;
+import com.mickaelsantos.apiagrosync.modules.farm.models.Field;
+import com.mickaelsantos.apiagrosync.modules.inventory.models.Seed;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

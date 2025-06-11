@@ -1,8 +1,7 @@
 package com.mickaelsantos.apiagrosync.modules.farm.models;
 
-import com.mickaelsantos.apiagrosync.modules.user.models.User;
-import com.mickaelsantos.apiagrosync.modules.field.models.Field;
-import com.mickaelsantos.apiagrosync.modules.harvest.models.Harvest;
+import com.mickaelsantos.apiagrosync.modules.cropcycle.models.Harvest;
+import com.mickaelsantos.apiagrosync.modules.security.models.User;
 
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Column;

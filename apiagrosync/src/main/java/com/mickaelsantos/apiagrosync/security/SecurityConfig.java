@@ -31,9 +31,6 @@ public class SecurityConfig {
                             .requestMatchers("/api/v1/field/create").permitAll()
                             .requestMatchers("/api/v1/user/create").permitAll()
                             .requestMatchers("/api/v1/user/delete/{id}").permitAll()
-                            .requestMatchers("/api/v1/admin/create").permitAll()
-                            .requestMatchers("/api/v1/admin/update").permitAll()
-                            .requestMatchers("/api/v1/admin/delete/{id}").permitAll()
                             .requestMatchers("/api/v1/user/update").permitAll()
                             .requestMatchers("/api/v1/user/auth").permitAll()
                             .requestMatchers("/api/v1/admin/auth").permitAll();
