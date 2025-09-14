@@ -17,5 +17,5 @@ services:
           memory: 2048M
     volumes:
       - postgres_data:/var/lib/postgresql/data
-volumes: 
+volumes:
   postgres_data:
