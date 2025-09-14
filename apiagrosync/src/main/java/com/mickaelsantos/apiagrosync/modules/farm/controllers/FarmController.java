@@ -33,7 +33,6 @@ public class FarmController {
     @Autowired
     private ToggleFarmUseCase toggleFarmUseCase;
 
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<Object> create(@RequestBody CreateFarmRequestDto requestDTO) {
         try {

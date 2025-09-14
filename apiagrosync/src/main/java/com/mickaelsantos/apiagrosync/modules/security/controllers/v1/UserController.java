@@ -1,4 +1,4 @@
-package com.mickaelsantos.apiagrosync.modules.security.controllers;
+package com.mickaelsantos.apiagrosync.modules.security.controllers.v1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

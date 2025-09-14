@@ -32,8 +32,7 @@ public class SecurityConfig {
                             .requestMatchers("/api/v1/user/create").permitAll()
                             .requestMatchers("/api/v1/user/delete/{id}").permitAll()
                             .requestMatchers("/api/v1/user/update").permitAll()
-                            .requestMatchers("/api/v1/user/auth").permitAll()
-                            .requestMatchers("/api/v1/admin/auth").permitAll();
+                            .requestMatchers("/api/v1/user/auth").permitAll();
 
                     auth.anyRequest().authenticated();
                 })
@@ -45,7 +44,8 @@ public class SecurityConfig {
     @Bean
     public UrlBasedCorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
+
+        config.setAllowCredentials(false);
         config.addAllowedOrigin("*");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
